@@ -1,52 +1,83 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
 <meta charset="UTF-8">
-<title>Galaxy Cookie 🍪</title>
-<link rel="stylesheet" href="style.css">
+<title>Shiwiko</title>
+<link rel="stylesheet" href="profil.css">
 </head>
+
 <body>
 
-<!-- PROFIL -->
-<div id="profile">
-<h3>👤 Profil</h3>
-<p>Score : <span id="pScore">0</span></p>
-<p>Clicks : <span id="pClicks">0</span></p>
-<p>Puissance : <span id="pPower">1</span></p>
-<p>Auto : <span id="pAuto">0</span></p>
-<p>Titre : <span id="pTitle">Novice</span></p>
+<!-- VIDEO BACKGROUND -->
+<video autoplay muted loop id="bg-video">
+  <source src="background.mp4" type="video/mp4">
+</video>
+
+<!-- PLAYER EN HAUT -->
+<div class="top-player">
+  <button onclick="playMusic()">Play</button>
+  <button onclick="stopMusic()">Stop</button>
+  Volume
+  <input type="range" min="0" max="1" step="0.1" onchange="setVolume(this.value)">
+  <button onclick="toggleMusicMenu()">Musique</button>
 </div>
 
-<h1>🌌 Galaxy Cookie 🍪</h1>
-<h2><span id="score">0</span> cookies</h2>
-
-<!-- COOKIE -->
-<div id="cookieZone">
-<img id="cookie" src="https://i.imgur.com/6o5VQ3S.png">
+<!-- MENU MUSIQUE -->
+<div class="music-menu" id="musicMenu">
+  <button onclick="changeMusic('music1.mp3')">Musique 1</button>
+  <button onclick="changeMusic('music2.mp3')">Musique 2</button>
+  <button onclick="changeMusic('music3.mp3')">Musique 3</button>
 </div>
 
-<!-- SHOP -->
-<div id="shop">
-<button id="upgradeClick">+1 Click (10)</button>
-<button id="buyAuto">Auto Clicker (50)</button>
+<!-- CONTENU -->
+<div class="content">
+  <div class="profile">
+    <img src="profile.jpg">
+  </div>
+
+  <div class="description">
+    Bienvenue sur mon site
+  </div>
+
+  <div class="buttons">
+    <a class="link-btn" href="https://youtube.com">
+      <img src="youtube.png"><span>Youtube</span>
+    </a>
+
+    <a class="link-btn" href="https://discord.com">
+      <img src="discord.png"><span>Discord</span>
+    </a>
+
+    <a class="link-btn" href="https://twitter.com">
+      <img src="twitter.png"><span>Twitter</span>
+    </a>
+  </div>
 </div>
 
-<!-- TITRES -->
-<div id="titles">
-<h3>🏷️ Titres</h3>
-<button class="titleBtn" data-title="Apprenti" data-price="100">Apprenti (100)</button>
-<button class="titleBtn" data-title="Expert" data-price="300">Expert (300)</button>
-<button class="titleBtn" data-title="Maître" data-price="800">Maître (800)</button>
-<button class="titleBtn" data-title="Légende" data-price="2000">Légende (2000)</button>
-</div>
+<audio id="music" src="music1.mp3"></audio>
 
-<!-- QUÊTE -->
-<div id="quest">
-<h3>📅 Quête du jour</h3>
-<p id="questText"></p>
-<button id="claimQuest">Récupérer</button>
-</div>
+<script>
+let music = document.getElementById("music");
 
-<script src="script.js"></script>
+function playMusic(){ music.play(); }
+function stopMusic(){ music.pause(); }
+function setVolume(v){ music.volume = v; }
+
+function changeMusic(src){
+  music.src = src;
+  music.play();
+}
+
+function toggleMusicMenu(){
+  let menu = document.getElementById("musicMenu");
+  if(menu.style.display === "block"){
+    menu.style.display = "none";
+  } else {
+    menu.style.display = "block";
+  }
+}
+</script>
+
 </body>
 </html>
