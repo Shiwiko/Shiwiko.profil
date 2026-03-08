@@ -9,20 +9,22 @@
 
 <body>
 
-<!-- VIDEO + AUDIO BACKGROUND -->
-<video autoplay muted loop id="bg-video" playsinline>
+<!-- VIDEO BACKGROUND -->
+<video id="bg-video" loop playsinline>
   <source src="https://n.uguu.se/aYCGxlGg.mp4" type="video/mp4">
 </video>
 
-<!-- PLAYER EN HAUT -->
+<!-- PLAYER -->
 <div class="top-player">
+  <button onclick="playVideo()">Play</button>
+  <button onclick="stopVideo()">Stop</button>
   Volume
   <input type="range" min="0" max="1" step="0.1" onchange="setVolume(this.value)">
   <button onclick="toggleVideoMenu()">Choisir Vidéo</button>
 </div>
 
 <!-- MENU VIDÉOS -->
-<div class="music-menu" id="videoMenu" style="display:none;">
+<div class="music-menu" id="videoMenu">
   <button onclick="changeVideo('https://n.uguu.se/aYCGxlGg.mp4')">Vidéo 1</button>
   <button onclick="changeVideo('https://n.uguu.se/example2.mp4')">Vidéo 2</button>
   <button onclick="changeVideo('https://n.uguu.se/example3.mp4')">Vidéo 3</button>
@@ -66,31 +68,31 @@ let video = document.getElementById("bg-video");
 // Volume initial
 video.volume = 0.5;
 
+// Play / Stop vidéo
+function playVideo(){
+  video.play();
+}
+
+function stopVideo(){
+  video.pause();
+}
+
+// Changer le volume
+function setVolume(v){
+  video.volume = v;
+}
+
 // Changer la vidéo
 function changeVideo(videoSrc){
   video.src = videoSrc;
   video.play();
 }
 
-// Régler le volume
-function setVolume(v){
-  video.volume = v;
-}
-
 // Toggle menu vidéo
 function toggleVideoMenu(){
-  let menu = document.getElementById("videoMenu");
-  if(menu.style.display === "block"){
-    menu.style.display = "none";
-  } else {
-    menu.style.display = "block";
-  }
+  const menu = document.getElementById("videoMenu");
+  menu.style.display = (menu.style.display === "block") ? "none" : "block";
 }
-
-// Auto play vidéo au chargement
-window.addEventListener('load', () => {
-  video.play();
-});
 </script>
 
 </body>
