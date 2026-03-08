@@ -3,14 +3,13 @@ body {
   font-family:Arial, sans-serif;
   background:#111;
   color:white;
-  text-align:center;
   display:flex;
   justify-content:center;
   align-items:center;
   min-height:100vh;
+  text-align:center;
 }
 
-/* VIDEO BACKGROUND */
 #bg-video {
   position:fixed;
   top:0;
@@ -21,34 +20,31 @@ body {
   z-index:-1;
 }
 
-/* CONTENU */
 .content {
   display:flex;
   justify-content:center;
   align-items:center;
   flex-direction:column;
   width:100%;
-  max-width:350px;
+  max-width:500px;
   padding:10px;
 }
 
-/* CARTE PROFIL STYLE DISCORD */
 .profile-card {
   position:relative;
   width:100%;
-  background:rgba(0,0,0,0.7);
-  border-radius:12px;
+  background:rgba(0,0,0,0.75);
+  border-radius:16px;
   overflow:hidden;
-  padding-top:60px;
+  padding-top:80px;
   display:flex;
   flex-direction:column;
   align-items:center;
 }
 
-/* BANNIÈRE */
 .profile-banner {
   width:100%;
-  height:140px;
+  height:180px;
   overflow:hidden;
   position:absolute;
   top:0;
@@ -61,15 +57,14 @@ body {
   object-fit:cover;
 }
 
-/* PROFIL ROND légèrement à gauche */
 .profile-img {
-  width:120px;
-  height:120px;
+  width:150px;
+  height:150px;
   border-radius:50%;
-  border:4px solid white;
+  border:5px solid white;
   overflow:hidden;
   position:absolute;
-  top:80px;
+  top:100px;
   left:20px;
   z-index:2;
 }
@@ -80,78 +75,102 @@ body {
   object-fit:cover;
 }
 
-/* NOM + DESCRIPTION plus bas */
 .profile-info {
-  margin-top:80px; /* laisser plus de place sous la bannière */
+  margin-top:120px;
   text-align:center;
 }
 
 .profile-info h2 {
   margin:10px 0 5px;
-  font-size:22px;
+  font-size:26px;
 }
 
 .profile-info p {
   margin:0;
-  font-size:16px;
+  font-size:18px;
   color:#ccc;
 }
 
-/* BOUTONS */
 .buttons {
-  margin-top:20px;
+  margin-top:25px;
   display:flex;
   flex-direction:column;
   align-items:center;
-  gap:10px;
+  gap:12px;
 }
 
 .link-btn {
   display:flex;
   align-items:center;
   gap:10px;
-  background:rgba(255,255,255,0.1);
-  padding:10px 20px;
-  border-radius:8px;
+  background:rgba(255,255,255,0.15);
+  padding:12px 25px;
+  border-radius:10px;
   text-decoration:none;
   color:white;
   width:100%;
-  max-width:250px;
+  max-width:300px;
   opacity:0;
   transform:translateY(20px);
 }
 
 .link-btn img {
-  width:30px;
+  width:35px;
 }
 
-/* RESPONSIVE */
+.views {
+  margin-top:25px;
+  font-size:18px;
+  background: rgba(0,0,0,0.5);
+  padding: 10px 20px;
+  border-radius:12px;
+  color: #fff;
+  text-align:center;
+  font-weight:bold;
+  box-shadow:0 0 10px rgba(0,0,0,0.6);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.views:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0 20px rgba(0,255,255,0.8);
+}
+
 @media (max-width:600px){
+  .content {
+    max-width:90%;
+  }
   .profile-card {
-    width:90%;
-    padding-top:50px;
+    padding-top:60px;
   }
   .profile-banner {
-    height:100px;
+    height:120px;
   }
   .profile-img {
-    width:80px;
-    height:80px;
-    top:50px;
+    width:100px;
+    height:100px;
+    top:70px;
     left:15px;
   }
   .profile-info {
-    margin-top:60px;
+    margin-top:90px;
   }
   .profile-info h2 {
-    font-size:18px;
+    font-size:20px;
   }
   .profile-info p {
     font-size:14px;
   }
   .link-btn {
     width:100%;
-    max-width:200px;
+    max-width:220px;
+    padding:8px 15px;
+  }
+  .link-btn img {
+    width:25px;
+  }
+  .views {
+    font-size:16px;
     padding:8px 15px;
   }
 }
