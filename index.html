@@ -7,7 +7,7 @@
 </head>
 <body>
 
-<video id="bg-video" loop autoplay playsinline>
+<video id="bg-video" loop autoplay muted playsinline>
   <source src="https://n.uguu.se/aYCGxlGg.mp4" type="video/mp4">
 </video>
 
@@ -24,7 +24,7 @@
     </div>
 
     <div class="profile-name">
-      <!-- Espace conservé sous le profil -->
+      <!-- Espace conservé sous le profil pour séparer les boutons -->
     </div>
 
     <div class="buttons">
@@ -52,6 +52,7 @@ let video = document.getElementById("bg-video");
 video.volume = 0.5;
 
 window.addEventListener("load", () => {
+  // Animation d'apparition
   const items = document.querySelectorAll(".profile-card, .link-btn");
   items.forEach((el, i) => {
     el.style.opacity = 0;
