@@ -39,8 +39,8 @@ body {
   display:flex;
   flex-direction:column;
   align-items:center;
-  padding-top:280px; /* assez d'espace pour bannière + profil + nom */
-  padding-bottom:80px;
+  padding-top:350px; /* espace total pour bannière + profil + nom + boutons */
+  padding-bottom:50px;
 }
 
 .profile-banner {
@@ -66,8 +66,9 @@ body {
   border:5px solid white;
   overflow:hidden;
   position:absolute;
-  top:150px; /* place bien le profil sur la bannière */
-  left:calc(50% - 110px);
+  top:150px;
+  left:50%;
+  transform:translateX(-50%);
   z-index:2;
 }
 
@@ -78,18 +79,17 @@ body {
 }
 
 .profile-name {
-  margin-top:260px; /* sous le profil */
+  margin-top:0; /* position relative dans le flux */
   text-align:center;
   z-index:3;
 }
 
 .profile-name h2 {
   font-size:38px;
-  margin:0;
+  margin:0 0 20px 0; /* espace sous le nom pour boutons */
 }
 
 .buttons {
-  margin-top:40px; /* bien en dessous du nom */
   display:flex;
   flex-direction:column;
   align-items:center;
@@ -137,8 +137,8 @@ body {
 
 @media (max-width:600px){
   .profile-card {
-    padding-top:200px;
-    padding-bottom:60px;
+    padding-top:250px;
+    padding-bottom:40px;
   }
   .profile-banner {
     height:180px;
@@ -147,17 +147,10 @@ body {
     width:140px;
     height:140px;
     top:80px;
-    left:calc(50% - 70px);
-  }
-  .profile-name {
-    margin-top:150px;
   }
   .profile-name h2 {
     font-size:26px;
-  }
-  .buttons {
-    margin-top:30px;
-    gap:15px;
+    margin-bottom:15px;
   }
   .link-btn {
     width:100%;
