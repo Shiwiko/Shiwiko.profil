@@ -27,7 +27,6 @@ body{
   display:flex;
   justify-content:center;
   gap:10px;
-  flex-wrap:wrap;
   z-index:10;
 }
 
@@ -41,18 +40,20 @@ body{
 .profile-card{
   position:relative;
   width:250px;
-  margin:0 auto;
+  margin:0 auto 40px;
   display:flex;
   flex-direction:column;
   align-items:center;
 }
 
-/* Fond derrière le profil */
+/* GIF derrière le profil */
 .profile-bg{
   width:100%;
-  height:120px;
+  height:150px;
   border-radius:12px;
   overflow:hidden;
+  position:relative;
+  z-index:1;
 }
 
 .profile-bg img{
@@ -64,12 +65,13 @@ body{
 /* Image profil ronde au-dessus du fond */
 .profile-img{
   position:absolute;
-  top:60px; /* moitié du fond */
+  top:75px; /* milieu du fond */
   width:120px;
   height:120px;
   border-radius:50%;
   border:4px solid white;
   overflow:hidden;
+  z-index:2;
 }
 
 .profile-img img{
@@ -80,8 +82,9 @@ body{
 
 /* DESCRIPTION */
 .description{
-  margin-top:80px; /* laisser de la place pour le profil */
+  margin-top:100px; /* espace sous le profil */
   font-size:20px;
+  opacity:0;
 }
 
 /* BOUTONS */
@@ -103,6 +106,8 @@ body{
   text-decoration:none;
   color:white;
   width:250px;
+  opacity:0;
+  transform:translateY(20px);
 }
 
 .link-btn img{
@@ -115,16 +120,16 @@ body{
     width:180px;
   }
   .profile-bg{
-    height:80px;
+    height:100px;
   }
   .profile-img{
-    top:40px;
+    top:50px;
     width:80px;
     height:80px;
   }
   .description{
     font-size:16px;
-    margin-top:60px;
+    margin-top:70px;
   }
   .link-btn{
     width:180px;
