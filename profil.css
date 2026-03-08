@@ -39,8 +39,8 @@ body {
   display:flex;
   flex-direction:column;
   align-items:center;
-  padding-top:350px; /* espace total pour bannière + profil + nom + boutons */
-  padding-bottom:50px;
+  padding-top:350px;
+  padding-bottom:30px;
 }
 
 .profile-banner {
@@ -79,14 +79,14 @@ body {
 }
 
 .profile-name {
-  margin-top:0; /* position relative dans le flux */
+  margin-top:260px;
   text-align:center;
   z-index:3;
 }
 
 .profile-name h2 {
   font-size:38px;
-  margin:0 0 20px 0; /* espace sous le nom pour boutons */
+  margin:0 0 20px 0;
 }
 
 .buttons {
@@ -116,29 +116,10 @@ body {
   width:50px;
 }
 
-.views {
-  margin-top:35px;
-  font-size:24px;
-  background: rgba(0,0,0,0.5);
-  padding: 16px 35px;
-  border-radius:16px;
-  color: #fff;
-  text-align:center;
-  font-weight:bold;
-  box-shadow:0 0 15px rgba(0,0,0,0.6);
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
-  z-index:3;
-}
-
-.views:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 0 28px rgba(0,255,255,0.8);
-}
-
 @media (max-width:600px){
   .profile-card {
     padding-top:250px;
-    padding-bottom:40px;
+    padding-bottom:30px;
   }
   .profile-banner {
     height:180px;
@@ -159,9 +140,5 @@ body {
   }
   .link-btn img {
     width:30px;
-  }
-  .views {
-    font-size:18px;
-    padding:10px 20px;
   }
 }
