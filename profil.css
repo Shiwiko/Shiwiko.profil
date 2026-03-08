@@ -8,7 +8,7 @@ body {
   align-items:center;
   min-height:100vh;
   text-align:center;
-  overflow:hidden; /* Bloque le scroll */
+  overflow:hidden;
 }
 
 #bg-video {
@@ -32,20 +32,20 @@ body {
 .profile-card {
   position:relative;
   width:90%;
-  max-width:750px; /* plus grand */
+  max-width:750px;
   background:rgba(0,0,0,0.75);
   border-radius:20px;
   overflow:hidden;
   display:flex;
   flex-direction:column;
   align-items:center;
-  padding-top:180px; /* plus bas pour voir le profil et Shiwiko */
+  padding-top:180px;
   padding-bottom:50px;
 }
 
 .profile-banner {
   width:100%;
-  height:300px; /* plus grande */
+  height:300px;
   overflow:hidden;
   position:absolute;
   top:0;
@@ -59,13 +59,13 @@ body {
 }
 
 .profile-img {
-  width:220px; /* plus grand */
+  width:220px;
   height:220px;
   border-radius:50%;
   border:5px solid white;
   overflow:hidden;
   position:absolute;
-  top:180px; /* plus bas pour le centrer verticalement */
+  top:180px;
   left:calc(50% - 110px);
   z-index:2;
 }
@@ -76,20 +76,14 @@ body {
   object-fit:cover;
 }
 
-.profile-info {
-  margin-top:200px; /* décale Shiwiko sous le profil */
+.profile-name {
+  margin-top:250px; /* sous le profil, au dessus des boutons */
   text-align:center;
 }
 
-.profile-info h2 {
-  margin:10px 0 5px;
-  font-size:38px; /* plus grand */
-}
-
-.profile-info p {
+.profile-name h2 {
+  font-size:38px;
   margin:0;
-  font-size:24px;
-  color:#ccc;
 }
 
 .buttons {
@@ -110,13 +104,13 @@ body {
   text-decoration:none;
   color:white;
   width:100%;
-  max-width:450px; /* plus large */
+  max-width:450px;
   opacity:0;
   transform:translateY(20px);
 }
 
 .link-btn img {
-  width:50px; /* plus grand */
+  width:50px;
 }
 
 .views {
@@ -150,14 +144,11 @@ body {
     top:100px;
     left:calc(50% - 70px);
   }
-  .profile-info {
-    margin-top:140px;
+  .profile-name {
+    margin-top:160px;
   }
-  .profile-info h2 {
+  .profile-name h2 {
     font-size:26px;
-  }
-  .profile-info p {
-    font-size:16px;
   }
   .link-btn {
     width:100%;
