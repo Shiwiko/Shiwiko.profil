@@ -23,9 +23,8 @@
       <img src="https://i.postimg.cc/vBfCMhP8/b4db858757df355a17ac4743ace291b7.jpg" alt="Profil">
     </div>
 
-    <div class="profile-info">
+    <div class="profile-name">
       <h2>Shiwiko</h2>
-      <p>Bienvenue sur mon site</p>
     </div>
 
     <div class="buttons">
@@ -57,7 +56,7 @@ let video = document.getElementById("bg-video");
 video.volume = 0.5;
 
 window.addEventListener("load", () => {
-  const items = document.querySelectorAll(".profile-card, .profile-info, .link-btn, .views");
+  const items = document.querySelectorAll(".profile-card, .profile-name, .link-btn, .views");
   items.forEach((el, i) => {
     el.style.opacity = 0;
     el.style.transform = "translateY(20px)";
