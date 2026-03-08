@@ -39,7 +39,7 @@ body {
   display:flex;
   flex-direction:column;
   align-items:center;
-  padding-top:370px;
+  padding-top:400px; /* espace pour le profil */
   padding-bottom:30px;
 }
 
@@ -79,7 +79,7 @@ body {
 }
 
 .profile-name {
-  margin-top:300px;
+  margin-top:350px; /* espace sous le profil pour boutons */
   text-align:center;
   z-index:3;
 }
