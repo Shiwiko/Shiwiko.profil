@@ -30,27 +30,10 @@ body{
   z-index:10;
 }
 
-/* MENU MUSIQUE */
-.music-menu{
-  position:fixed;
-  top:50px;
-  right:20px;
-  background:rgba(0,0,0,0.8);
-  padding:10px;
-  border-radius:10px;
-  display:none;
-  z-index:20;
-}
-
-.music-menu button{
-  display:block;
-  margin:5px 0;
-  width:120px;
-}
-
 /* CONTENU */
 .content{
   margin-top:120px;
+  padding:0 10px;
 }
 
 /* PROFIL */
@@ -59,9 +42,11 @@ body{
   height:200px;
   border-radius:50%;
   border:4px solid white;
+  max-width:40vw;
+  max-height:40vw;
 }
 
-/* TEXTE */
+/* DESCRIPTION */
 .description{
   margin-top:15px;
   font-size:20px;
@@ -90,4 +75,19 @@ body{
 
 .link-btn img{
   width:40px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 600px){
+  .profile img{
+    width:120px;
+    height:120px;
+  }
+  .link-btn{
+    width:180px;
+    padding:8px 15px;
+  }
+  .description{
+    font-size:16px;
+  }
 }
