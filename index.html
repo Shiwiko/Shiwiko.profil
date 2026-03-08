@@ -9,33 +9,26 @@
 
 <body>
 
-<!-- VIDEO BACKGROUND -->
 <video id="bg-video" loop autoplay playsinline>
   <source src="https://n.uguu.se/aYCGxlGg.mp4" type="video/mp4">
 </video>
 
-<!-- CONTENU -->
 <div class="content">
 
-  <!-- CARTE PROFIL STYLE DISCORD -->
   <div class="profile-card">
-    <!-- Bannière -->
     <div class="profile-banner">
       <img src="https://i.postimg.cc/yNx2k9PC/e2a8dac3f69e6677326b1d0f9d510925.gif" alt="Bannière">
     </div>
 
-    <!-- Profil rond légèrement à gauche sur la bannière -->
     <div class="profile-img">
       <img src="https://i.postimg.cc/vBfCMhP8/b4db858757df355a17ac4743ace291b7.jpg" alt="Profil">
     </div>
 
-    <!-- Nom et description plus bas -->
     <div class="profile-info">
       <h2>Shiwiko</h2>
       <p>Bienvenue sur mon site</p>
     </div>
 
-    <!-- Boutons -->
     <div class="buttons">
       <a class="link-btn" href="https://youtube.com">
         <img src="https://i.postimg.cc/Y0xS2Z8h/youtube.png" alt="YouTube">
@@ -52,6 +45,10 @@
         <span>Twitter</span>
       </a>
     </div>
+
+    <div class="views">
+      👀 Visiteurs uniques : <span id="visitor-count">0</span>
+    </div>
   </div>
 </div>
 
@@ -59,9 +56,8 @@
 let video = document.getElementById("bg-video");
 video.volume = 0.5;
 
-// Animation fade-in
 window.addEventListener("load", () => {
-  const items = document.querySelectorAll(".profile-card, .profile-info, .link-btn");
+  const items = document.querySelectorAll(".profile-card, .profile-info, .link-btn, .views");
   items.forEach((el, i) => {
     el.style.opacity = 0;
     el.style.transform = "translateY(20px)";
@@ -72,6 +68,22 @@ window.addEventListener("load", () => {
     }, i * 200);
   });
 });
+
+const visitorKey = "shiwiko_visited";
+if(!localStorage.getItem(visitorKey)){
+  fetch("https://api.countapi.xyz/hit/shiwiko-site/uniquevisitors")
+    .then(res => res.json())
+    .then(data => {
+      document.getElementById("visitor-count").innerText = data.value;
+      localStorage.setItem(visitorKey, "true");
+    });
+}else{
+  fetch("https://api.countapi.xyz/get/shiwiko-site/uniquevisitors")
+    .then(res => res.json())
+    .then(data => {
+      document.getElementById("visitor-count").innerText = data.value;
+    });
+}
 </script>
 
 </body>
