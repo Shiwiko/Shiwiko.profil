@@ -9,23 +9,23 @@
 
 <body>
 
-<!-- VIDEO BACKGROUND -->
-<video autoplay muted loop id="bg-video">
-  <source src="background1.mp4" type="video/mp4">
+<!-- VIDEO + AUDIO BACKGROUND -->
+<video autoplay muted loop id="bg-video" playsinline>
+  <source src="https://n.uguu.se/aYCGxlGg.mp4" type="video/mp4">
 </video>
 
 <!-- PLAYER EN HAUT -->
 <div class="top-player">
   Volume
   <input type="range" min="0" max="1" step="0.1" onchange="setVolume(this.value)">
-  <button onclick="toggleMusicMenu()">Musique</button>
+  <button onclick="toggleVideoMenu()">Choisir Vidéo</button>
 </div>
 
-<!-- MENU MUSIQUE -->
-<div class="music-menu" id="musicMenu">
-  <button onclick="changeMedia('music1.mp3', 'background1.mp4')">Musique 1</button>
-  <button onclick="changeMedia('music2.mp3', 'background2.mp4')">Musique 2</button>
-  <button onclick="changeMedia('music3.mp3', 'background3.mp4')">Musique 3</button>
+<!-- MENU VIDÉOS -->
+<div class="music-menu" id="videoMenu" style="display:none;">
+  <button onclick="changeVideo('https://n.uguu.se/aYCGxlGg.mp4')">Vidéo 1</button>
+  <button onclick="changeVideo('https://n.uguu.se/example2.mp4')">Vidéo 2</button>
+  <button onclick="changeVideo('https://n.uguu.se/example3.mp4')">Vidéo 3</button>
 </div>
 
 <!-- CONTENU -->
@@ -60,36 +60,26 @@
   </div>
 </div>
 
-<!-- AUDIO -->
-<audio id="music" autoplay loop>
-  <source src="music1.mp3" type="audio/mp3">
-</audio>
-
 <script>
-let music = document.getElementById("music");
 let video = document.getElementById("bg-video");
 
 // Volume initial
-music.volume = 0.5;
+video.volume = 0.5;
 
-// Fonction pour changer musique et vidéo en même temps
-function changeMedia(musicSrc, videoSrc){
-  music.src = musicSrc;
-  music.play();
-  
-  // Change la source de la vidéo
+// Changer la vidéo
+function changeVideo(videoSrc){
   video.src = videoSrc;
   video.play();
 }
 
-// Fonction pour gérer le volume
+// Régler le volume
 function setVolume(v){
-  music.volume = v;
+  video.volume = v;
 }
 
-// Toggle menu musique
-function toggleMusicMenu(){
-  let menu = document.getElementById("musicMenu");
+// Toggle menu vidéo
+function toggleVideoMenu(){
+  let menu = document.getElementById("videoMenu");
   if(menu.style.display === "block"){
     menu.style.display = "none";
   } else {
@@ -97,9 +87,8 @@ function toggleMusicMenu(){
   }
 }
 
-// Auto play musique et vidéo au chargement
+// Auto play vidéo au chargement
 window.addEventListener('load', () => {
-  music.play();
   video.play();
 });
 </script>
